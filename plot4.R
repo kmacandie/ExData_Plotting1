@@ -12,9 +12,11 @@ voltage <- as.numeric(valid$Voltage)
 
 DateTime <- as.POSIXct(paste(valid$Date, valid$Time), format = "%d/%m/%Y %H:%M:%S", tz="EST")
 
-par(mfrow=c(2, 2), mar=c(4, 4, 2, 1), oma=c(0, 0, 2, 0))
+
 
 png(filename="plot4.png", bg="transparent")
+
+par(mfrow=c(2, 2), mar=c(4, 4, 2, 1), oma=c(0, 0, 2, 0))
 
 #generate plots on screen device
 plot(DateTime, power, type="l", ylab="Global Active Power")
