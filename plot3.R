@@ -9,6 +9,8 @@ power <- as.numeric(as.character(valid$Global_active_power))
 
 DateTime <- as.POSIXct(paste(valid$Date, valid$Time), format = "%d/%m/%Y %H:%M:%S", tz="EST")
 
+png(filename="plot3.png", bg="transparent")
+
 #generate plot on screen device
 plot(DateTime, valid$Sub_metering_1, type="l", xlab = "", ylab="Energy sub metering")
 
@@ -17,9 +19,6 @@ points(DateTime, valid$Sub_metering_2, type="l", ylab="Global Active Power (kilo
 points(DateTime, valid$Sub_metering_3, type="l", ylab="Global Active Power (kilowatts)", col="blue")
 
 legend("topright", lty=1, col=c("black", "red", "blue"), legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
-
-# copy plot to png file
-dev.copy(png, file = "plot3.png")
 
 #close PNG device
 dev.off()

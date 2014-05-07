@@ -9,11 +9,10 @@ power <- as.numeric(as.character(valid$Global_active_power))
 
 DateTime <- as.POSIXct(paste(valid$Date, valid$Time), format = "%d/%m/%Y %H:%M:%S", tz="EST")
 
-#generate plot on screen device
-plot(DateTime, power, type="l", ylab="Global Active Power (kilowatts)")
+png(filename="plot2.png", bg="transparent")
 
-# copy plot to png file
-dev.copy(png, file = "plot2.png")
+#generate plot
+plot(DateTime, power, type="l", ylab="Global Active Power (kilowatts)")
 
 #close PNG device
 dev.off()

@@ -14,6 +14,8 @@ DateTime <- as.POSIXct(paste(valid$Date, valid$Time), format = "%d/%m/%Y %H:%M:%
 
 par(mfrow=c(2, 2), mar=c(4, 4, 2, 1), oma=c(0, 0, 2, 0))
 
+png(filename="plot4.png", bg="transparent")
+
 #generate plots on screen device
 plot(DateTime, power, type="l", ylab="Global Active Power")
 
@@ -29,8 +31,6 @@ legend("topright", lty=1, bty="n", col=c("black", "red", "blue"), legend=c("Sub_
 
 plot(DateTime, rpower, type="l", xlab="datetime", ylab="Global_reactive_power")
 
-# copy plot to png file
-dev.copy(png, file = "plot4.png")
 
 #close PNG device
 dev.off()
