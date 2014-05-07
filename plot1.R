@@ -14,7 +14,7 @@ power <- as.numeric(as.character(valid$Global_active_power))
 hist(power, col = "red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
 
 # copy plot to png file
-dev.copy(png, file = "plot1.png")
+dev.copy(png, file = "plot1.png", bg="transparent")
 
 #close PNG device
 dev.off()
