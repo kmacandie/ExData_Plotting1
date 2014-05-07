@@ -11,7 +11,7 @@ valid <- subset(data, data$Date == "2007-02-01" | data$Date == "2007-02-02")
 power <- as.numeric(as.character(valid$Global_active_power))
 
 #generate plot on screen device
-hist(power, col = "red", xlab="Global Active Power (kilowatts)", main="Global Active Power")
+hist(power, col = "red", xlab="Global Active Power (kilowatts)", main="Global Active Power", bg="transparent")
 
 # copy plot to png file
 dev.copy(png, file = "plot1.png", bg="transparent")
